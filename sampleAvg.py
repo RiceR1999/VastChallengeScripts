@@ -44,7 +44,7 @@ def netSampleCount ():
     print (sample_counts)
 
 def sampleCountForSensor(location):
-    samplelocation = sys.argv[1]
+    samplelocation = location
     startyear = datetime_dates[0].year
     startweek = datetime_dates[0].isocalendar()[1]
     x = 0
