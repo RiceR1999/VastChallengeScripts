@@ -20,5 +20,13 @@ for row in csv_sheet:
     datetime_dates.append(datetime.strptime(string_dates, '%d-%b-%y'))
     sample_measure.append(row[4])
     
+#enddate = datetime_dates[len(datetime_dates)-1]
+startyear = datetime_dates[0].year
+startweek = datetime_dates[0].isocalendar()[1]
+for date in datetime_dates:
+    week = date.isocalendar()[1] + ((date.isocalendar()[0] - startyear) * 52)
+    while len(sample_counts) < week:
+        sample_counts.append(0)
+    sample_counts[week-startweek] += 1
 
-print(datetime_dates)
+
